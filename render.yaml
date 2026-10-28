@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: railcheck
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: API_MITRA_API_KEY
+        sync: false

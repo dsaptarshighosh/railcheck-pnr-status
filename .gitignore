@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.backend-deps/
+.venv/
+__pycache__/
+.pytest_cache/
+.vscode/*.log
+*.log
+.env*
+!.env.example
