@@ -74,3 +74,46 @@ html[data-theme="dark"] .demo-banner{background:#382f1b;border-color:#68542b;col
 html[data-theme="dark"] .nav.nav-open{background:#18211e;border-color:var(--line)}
 @media(max-width:800px){.theme-toggle{margin-left:auto;margin-right:12px}}
 @media(max-width:560px){.theme-toggle{min-height:34px;padding:0 9px;font-size:11px}.theme-toggle svg{width:15px;height:15px}}
+
+/* Phone layout: keep every status field readable and reachable. */
+.status-cell{min-width:0}
+@media(max-width:560px){
+  .app-shell{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  .topbar{gap:8px}
+  .theme-toggle{min-height:44px;min-width:44px;padding:0 9px;margin-right:0}
+  .menu-toggle{min-width:44px;min-height:44px;display:grid;place-items:center;padding:0}
+  .nav{left:calc(-16px - env(safe-area-inset-left));right:calc(-16px - env(safe-area-inset-right));padding:12px 16px}
+  .nav a{min-height:44px;display:flex;align-items:center}
+  .hero h1{font-size:clamp(42px,12vw,52px);line-height:1.02}
+  .hero-copy>p{line-height:1.55}
+  .hero-foot{align-items:flex-start;line-height:1.45}
+  .empty-graphic{padding-left:16px;padding-right:16px}
+  .how-point{grid-template-columns:minmax(0,1fr)}
+  .table-head{display:none}
+  .passenger-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:13px 10px;align-items:start;padding:15px 4px}
+  .passenger-name{grid-column:1/-1;font-size:12px}
+  .status-cell,.passenger-row .berth{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+  .status-cell::before,.passenger-row .berth::before{content:attr(data-label);font-size:10px;line-height:1.3;font-weight:700;letter-spacing:.02em;color:#69766f}
+  .status{max-width:100%;white-space:normal;line-height:1.35;overflow-wrap:anywhere}
+  .berth{font-size:12px;line-height:1.4;overflow-wrap:anywhere;color:#53635b}
+  .station{min-width:0}
+  .station strong{overflow-wrap:anywhere}
+  .route{grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);gap:4px}
+  .result-meta{width:100%;overflow-wrap:anywhere}
+  .footer>div{order:initial;width:100%;justify-content:initial}
+  .footer-main,.footer-meta,.footer-contact{width:100%;min-width:0}
+  .footer-links{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+  .footer-links a{min-height:44px;line-height:1.4}
+  .footer-meta{overflow-wrap:anywhere}
+  .footer-contact{align-items:flex-start;line-height:1.5}
+  .footer-contact a{min-height:44px;display:flex;align-items:center}
+}
+@media(max-width:360px){
+  .brand{gap:7px;font-size:16px}
+  .theme-toggle span{display:none}
+  .hero h1{font-size:40px}
+  .result-panel{padding-left:13px;padding-right:13px}
+  .status{font-size:9px;padding:5px}
+}
+html[data-theme="dark"] .status-cell::before,html[data-theme="dark"] .passenger-row .berth::before{color:#aab9b1}
+html[data-theme="dark"] .passenger-row .berth{color:#d1ddd6}
